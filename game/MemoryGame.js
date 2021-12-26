@@ -30,7 +30,7 @@ export class MemoryGame {
         const that = this;
         const images = await getRandomImages(this.level / 2);
         const randomNumbers = createArrayWithRandomNumber(this.level);
-
+        const cardContainers = [];
         for (let i = 0; i < randomNumbers.length; i++) {
             const cardId = randomNumbers[i];
             const imageId = Math.floor(i / 2);
@@ -41,9 +41,10 @@ export class MemoryGame {
             cardContainer.addEventListener('click', function(){
                 that.onClick.call(that, this)
             });
-            this.elm.append(cardContainer);
+            cardContainers.push(cardContainer);
         }
-
+        cardContainers.sort((a,b) => a.dataset.cardId - b.dataset.cardId);
+        cardContainers.forEach(c=> this.elm.append(c))
     }
     onClick(cardContainerElm) {
         if (this.isBlocked) {
