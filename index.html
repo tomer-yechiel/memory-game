@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Memory game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <button class="new-game-btn">new game</button>
+        <div class="level">
+            <label for="level">choose level:</label>
+            <div class="level-selector">
+                <div>
+                    <input class="level-change" checked type="radio" name="level" value="12" >
+                    <label for="html">12</label><br>
+                </div>
+                <div>
+                    <input class="level-change" type="radio" name="level" value="18">
+                    <label for="css">18</label><br>
+                </div>
+                <div>
+                    <input class="level-change" type="radio" name="level" value="24" onchange="onLevelChange(this)">
+                    <label for="javascript">24</label>
+                </div>
+            </div>
+        </div>
+        <span>timer:<span id="timer"></span></span>
+
+    </div>
+    <div id="board">
+
+    </div>
+    <div id="modal" class="modal">
+
+        <div class="modal-content">
+            <p>You won!</p>
+            <button id="new-game-btn-modal">new game</button>
+        </div>
+
+    </div>
+
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>
