@@ -14,6 +14,9 @@ const timer = new Timer(document.getElementById("timer"))
 const elms = Array.from(document.getElementsByClassName('level-change'));
 elms.forEach(elm => elm.addEventListener('click', onLevelChange));
 
+const newGameButtonElm = document.getElementById("new-game-btn");
+newGameButtonElm.addEventListener("click", restartGame);
+
 const newGameFromModalElm = document.getElementById("new-game-btn-modal");
 newGameFromModalElm.addEventListener("click", closeModalAndStartNewGame);
 
